@@ -25,8 +25,8 @@ function Home({changeStatus,status}) {
         {!status &&<h3>ตอนนี้ ยังไม่ Login ❌</h3>}
         {status &&<h3>ตอนนี้ Login แล้ว ✅</h3>}
         <div className="btn">
-            <Link to='/login'><button>เข้าสู่ระบบ</button></Link>
-            <Link to='/register'><button>สมัครบัญชี</button></Link>
+            <Link to='/login'><button disabled={status}>เข้าสู่ระบบ</button></Link>
+            <Link to='/register'><button disabled={status}>สมัครบัญชี</button></Link>
             <button onClick={confirmLogout} disabled={!status}>ออกจากระบบ</button>
         </div>
     </div>
