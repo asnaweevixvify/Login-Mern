@@ -1,0 +1,81 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  padding: 0;
+  margin: 0;
+  display: block;
+  overflow-y: hidden;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'kanit';
+}
+.home-container h1 ,.home-container h2, .home-container h3{
+  text-align: center;
+}
+.home-container h2{
+  font-weight: 500;
+  margin-top: 15px;
+}
+.home-container h3{
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 30px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: max-content;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title{
+  font-weight: 500;
+  margin-top: 150px;
+}
+.btn{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+button{
+  font-family: 'kanit';
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-container h3{
+  font-weight: 400;
+}
+.form-container input{
+  width: 400px;
+  height: 40px;
+  font-family: 'kanit';
+}
+.form-container textarea{
+  width: 400px;
+  height: 80px;
+  font-family: 'kanit';
+}
+.form-container button{
+  font-family: 'kanit';
+}
+.form-container p{
+  font-family: 'kanit';
+}
+.confirmPass{
+  color: red;
+}
