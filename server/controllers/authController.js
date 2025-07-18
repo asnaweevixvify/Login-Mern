@@ -1,10 +1,10 @@
 const User = require('../models/user')
-const brycpt = require('bcrypt')
+const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 module.exports.create = (req,res)=>{
     const userData = req.body
-    brycpt.hash(userData.password,10,(err,hash)=>{
+    bcrypt.hash(userData.password,10,(err,hash)=>{
         if(err){
             return res.status(400).json({error:err})
         }
@@ -25,7 +25,7 @@ module.exports.login = (req,res)=>{
         }
         else{
             const passwordDb = data.password
-            brycpt.compare(password,passwordDb,(err,result)=>{
+            bcrypt.compare(password,passwordDb,(err,result)=>{
                 if(err){
                     return res.status(400).json({error:err})
                 }
