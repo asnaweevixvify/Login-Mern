@@ -41,3 +41,26 @@ module.exports.login = (req,res)=>{
     })
     .catch((err)=>res.status(400).json({error:err}))
 }
+
+module.exports.checkName = (req,res) =>{
+    const username = req.params.name
+    User.findOne({username})
+    .then((data)=>{
+        if(data){
+            res.json({msg:'find complete'})
+        }
+        else{
+            res.status(401).json({msg:'ไม่พบชื่อผู้ใช้นี้'})
+        }
+    })
+    .catch(()=>res.status(400).json({error:err}))
+}
+
+module.exports.updatePass = (req,res)=>{
+    const {username,password} = req.body
+    bcrypt.hash(password,10,(err,hash)=>{
+        User.findOneAndUpdate({username},{password:hash})
+        .then(()=>res.json({msg:'Reset รหัสผ่านสำเร็จ'}))
+        .catch((err)=>res.status(400).json({error:err}))
+    })
+}

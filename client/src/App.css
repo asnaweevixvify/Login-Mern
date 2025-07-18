@@ -79,3 +79,9 @@ button{
 .confirmPass{
   color: red;
 }
+.des{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}

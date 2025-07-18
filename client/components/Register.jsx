@@ -40,7 +40,7 @@ function Register() {
     }
 
     useEffect(()=>{
-        if(confirmPass === password){
+        if(confirmPass === password && confirmPass!=='' && password!==''){
             setIsCorrect(true)
         }
         else if(confirmPass === ''){

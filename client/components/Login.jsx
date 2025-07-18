@@ -48,7 +48,10 @@ function Login({changeStatus}) {
                 <button disabled={!(username&&password)}>เข้าสู่ระบบ</button>
             </form>
             <p>ยังไม่มีบัญชี? <Link to='/register'>สร้างบัญชี</Link></p>
-            <p><Link to='/'>กลับไปหน้าหลัก</Link></p>
+            <div className="des">
+                <p><Link to='/findName'>ลืมรหัสผ่าน</Link></p>
+                <p><Link to='/'>กลับไปหน้าหลัก</Link></p>
+            </div>
         </div>
       )
 }
