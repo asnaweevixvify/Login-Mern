@@ -62,7 +62,7 @@ function Register() {
         <h3>confirm password</h3>
         <input type='text' onInput={setConfirmPassword}></input>
         {!isCorrect && <p className='confirmPass'>รหัสผ่านไม่ตรงกัน</p>}
-        <button type='submit'>สร้างบัญชี</button>
+        <button type='submit' disabled={!(username&&password&&isCorrect===true)}>สร้างบัญชี</button>
     </form>
     <p>มีบัญชีอยู่แล้ว? <Link to='/login'>เข้าสู่ระบบ</Link></p>
     <p><Link to='/'>กลับไปหน้าหลัก</Link></p>

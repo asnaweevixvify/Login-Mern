@@ -5,8 +5,9 @@ import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import { authenticate } from '../services/authorize'
 
-function Login() {
+function Login({changeStatus}) {
     const [userData,setUserData] = useState({username:'',password:''})
+    const {username,password} = userData
     const navigate = useNavigate()
 
     const inputValue = (topic)=>{
@@ -25,6 +26,7 @@ function Login() {
                 draggable: true
               });
               authenticate(res)
+              changeStatus(true)
               navigate('/')
         })
         .catch((err)=>{
@@ -43,7 +45,7 @@ function Login() {
                 <input type='text' onInput={inputValue('username')}></input>
                 <h3>password</h3>
                 <input type='text' onInput={inputValue('password')}></input>
-                <button>เข้าสู่ระบบ</button>
+                <button disabled={!(username&&password)}>เข้าสู่ระบบ</button>
             </form>
             <p>ยังไม่มีบัญชี? <Link to='/register'>สร้างบัญชี</Link></p>
             <p><Link to='/'>กลับไปหน้าหลัก</Link></p>
